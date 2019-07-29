@@ -8,7 +8,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 
 @RestController
@@ -51,11 +50,6 @@ public class MuzixController {
     @PutMapping("muzix")
     public ResponseEntity<?> updateMuzix(@RequestBody Muzix muzix) {
         return new ResponseEntity<>(muzixService.updateTrack(muzix.getTrackId(), muzix), HttpStatus.OK);
-    }
-    //Getting all the tracks matched by the name
-    @GetMapping("trackByName")
-    public ResponseEntity<?> getTrackByName(@RequestParam String name) throws TrackNotFoundException {
-        return new ResponseEntity<List<Muzix>>(muzixService.getTracksByName(name), HttpStatus.OK);
     }
 }
 

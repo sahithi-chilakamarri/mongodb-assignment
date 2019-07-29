@@ -12,16 +12,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import javax.sound.midi.Track;
 import java.io.IOException;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class MuzixServiceImpl implements MuzixService {
     //Autowiring the muzixrepository
     @Autowired
-    MuzixRepository muzixRepository;
+    private MuzixRepository muzixRepository;
     //Parameterized constructor
     public MuzixServiceImpl(MuzixRepository muzixRepository)
     {
@@ -63,13 +61,6 @@ public class MuzixServiceImpl implements MuzixService {
         }
         muzixRepository.deleteById(trackId);
         return muzixRepository.findAll();
-    }
-    //Getting the track according to the name
-    @Override
-    public List<Muzix> getTracksByName(String name) {
-
-        return muzixRepository.getTrackByName(name);
-
     }
     //Getting all the tracks from the service and converting into the java object and saving it into the database
     @Override

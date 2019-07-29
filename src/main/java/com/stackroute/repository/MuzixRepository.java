@@ -1,15 +1,10 @@
 package com.stackroute.repository;
 
 import com.stackroute.domain.Muzix;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
+//Extends mongo repository
 @Repository
-public interface MuzixRepository extends JpaRepository<Muzix,Integer> {
-    @Query("SELECT t FROM Track t WHERE name = ?1")
-    List<Muzix> getTrackByName(String name);
-
+public interface MuzixRepository extends MongoRepository<Muzix,Integer> {
 }

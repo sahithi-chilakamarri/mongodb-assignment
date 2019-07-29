@@ -21,7 +21,4 @@ public interface MuzixService {
 
     public void getTopTracks();
 
-    public List<Muzix> getTracksByName(String name);
-
-
 }
