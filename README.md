@@ -35,7 +35,10 @@ novice expert Internet users.
 6 Tools and technologies
 to be used
 
-MongoDb
+
+Maven Project
+PostMan
+MongoDatabase
 SpringBoot
 TomcatServer
 
